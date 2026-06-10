@@ -42,3 +42,167 @@ body {
 .article-content a {
   color: var(--slot4-accent-fill);
 }
+
+/*
+  Legacy auth routes still render the shared app shell directly.
+  These route-level overrides keep /login and /signup visually aligned with
+  the editable article masthead without editing app route/component files.
+*/
+body > div[class*="#fff7ee"],
+body > div[class*="#2f1d16"] {
+  background: #fff !important;
+  color: var(--slot4-page-text) !important;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"],
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] {
+  display: flex !important;
+  flex-direction: column !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  width: 100% !important;
+  border-bottom: 1px solid var(--editable-border) !important;
+  background: #fff !important;
+  color: var(--slot4-page-text) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"]::before,
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::before {
+  content: "LATEST   Fresh article ideas, editorial notes, and reader-first publishing.";
+  order: 1;
+  display: block;
+  height: 36px;
+  background: #30363d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 36px;
+  text-align: center;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"]::after,
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::after {
+  content: var(--slot4-brand-name) "\A News and Article Magazine";
+  order: 2;
+  display: block;
+  padding: 24px 16px 18px;
+  color: #f3242f;
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 0.95;
+  text-align: center;
+  white-space: pre;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"] > nav,
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] > nav {
+  order: 3;
+  height: 50px !important;
+  max-width: var(--editable-container) !important;
+  padding-inline: 0 !important;
+  border-top: 1px solid var(--editable-border);
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"] > nav::before,
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] > nav::before {
+  content: "Home   Article   About   Contact";
+  flex: 1 1 auto;
+  color: var(--slot4-page-text);
+  font-size: 14px;
+  font-weight: 800;
+  word-spacing: 24px;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"] a[aria-label],
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] a[aria-label],
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"] form,
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] form {
+  display: none !important;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"] a[href="/login"],
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] a[href="/login"] {
+  color: var(--slot4-page-text) !important;
+  border-radius: 2px !important;
+  font-weight: 900 !important;
+}
+
+body > div[class*="#fff7ee"] > header[class*="#fff7ee"] a[href="/signup"],
+body > div[class*="#2f1d16"] > header[class*="#fff7ee"] a[href="/signup"] {
+  border-radius: 2px !important;
+  background: #f3242f !important;
+  color: #fff !important;
+}
+
+body > div[class*="#fff7ee"] > main,
+body > div[class*="#2f1d16"] > main {
+  max-width: var(--editable-container) !important;
+  min-height: auto !important;
+  padding: 48px 16px 56px !important;
+  color: var(--slot4-page-text) !important;
+}
+
+body > div[class*="#fff7ee"] > main > section:first-child,
+body > div[class*="#2f1d16"] > main > section:last-child {
+  align-self: start;
+}
+
+body > div[class*="#fff7ee"] > main > section:first-child p:first-child,
+body > div[class*="#2f1d16"] > main > section:last-child p:first-child {
+  color: var(--slot4-accent) !important;
+}
+
+body > div[class*="#fff7ee"] > main h1,
+body > div[class*="#2f1d16"] > main h1,
+body > div[class*="#2f1d16"] > main h2 {
+  color: var(--slot4-page-text) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+body > div[class*="#fff7ee"] > main p,
+body > div[class*="#2f1d16"] > main p {
+  color: #5e6670 !important;
+}
+
+body > div[class*="#fff7ee"] > main > section:last-child,
+body > div[class*="#2f1d16"] > main > section:first-child {
+  border: 1px solid var(--editable-border) !important;
+  border-radius: 2px !important;
+  background: #f7f7f7 !important;
+  color: var(--slot4-page-text) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body > div[class*="#fff7ee"] > main input,
+body > div[class*="#2f1d16"] > main input {
+  border-radius: 2px !important;
+  border-color: var(--editable-border) !important;
+  background: #fff !important;
+  color: #0f172a !important;
+}
+
+body > div[class*="#fff7ee"] > main button[type="submit"],
+body > div[class*="#2f1d16"] > main button[type="submit"] {
+  border-radius: 2px !important;
+  background: var(--slot4-accent) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 767px) {
+  body > div[class*="#fff7ee"] > header[class*="#fff7ee"]::after,
+  body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::after {
+    font-size: 42px;
+  }
+
+  body > div[class*="#fff7ee"] > header[class*="#fff7ee"] > nav::before,
+  body > div[class*="#2f1d16"] > header[class*="#fff7ee"] > nav::before {
+    content: "Home   Article";
+    word-spacing: 16px;
+  }
+}
