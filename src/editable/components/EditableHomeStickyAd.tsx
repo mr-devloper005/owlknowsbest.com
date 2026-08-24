@@ -27,19 +27,19 @@ export function EditableHomeStickyAd() {
           onClick={() => setIsOpen((current) => !current)}
           aria-expanded={isOpen}
           aria-controls="owl-home-sticky-ad"
-          className="absolute left-1/2 top-0 z-20 flex h-10 min-w-20 -translate-x-1/2 -translate-y-full items-center justify-center rounded-t-2xl border border-b-0 border-slate-300 bg-white px-5 text-slate-700 shadow-[0_-8px_20px_rgba(15,23,42,0.12)] transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          className="absolute left-1/2 top-0 z-20 flex h-10 min-w-20 -translate-x-1/2 -translate-y-full items-center justify-center border border-b-0 border-white/[0.08] bg-[#111] px-5 text-white/60 shadow-[0_-8px_20px_rgba(0,0,0,0.4)] transition hover:bg-[#1a1a1a]"
         >
           {isOpen ? <ChevronDown aria-hidden="true" size={24} /> : <ChevronUp aria-hidden="true" size={24} />}
           <span className="sr-only">{isOpen ? 'Collapse advertisement' : 'Expand advertisement'}</span>
         </button>
 
         {!isOpen ? (
-          <div className="ml-auto flex w-fit items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2 shadow-xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Advertisement</span>
+          <div className="ml-auto flex w-fit items-center gap-3 border border-white/[0.08] bg-[#111] px-4 py-2 shadow-xl">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/30">Advertisement</span>
             <button
               type="button"
               onClick={() => setIsVisible(false)}
-              className="rounded-full p-1 text-slate-500 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="p-1 text-white/40 transition hover:text-white"
               aria-label="Close advertisement"
             >
               <X aria-hidden="true" size={18} />
@@ -48,15 +48,15 @@ export function EditableHomeStickyAd() {
         ) : (
           <div
             id="owl-home-sticky-ad"
-            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_55px_rgba(15,23,42,0.28)]"
+            className="relative overflow-hidden border border-white/[0.08] bg-[#111] shadow-[0_18px_55px_rgba(0,0,0,0.5)]"
           >
-            <span className="absolute left-2 top-2 z-10 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-600 shadow-sm backdrop-blur">
+            <span className="absolute left-2 top-2 z-10 bg-black/70 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/50 backdrop-blur">
               Sponsored
             </span>
             <button
               type="button"
               onClick={() => setIsVisible(false)}
-              className="absolute right-2 top-2 z-10 rounded-full bg-white/90 p-2 text-slate-600 shadow-sm backdrop-blur transition hover:bg-white hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="absolute right-2 top-2 z-10 bg-black/70 p-2 text-white/50 backdrop-blur transition hover:text-white"
               aria-label="Close advertisement"
             >
               <X aria-hidden="true" size={18} />
@@ -65,7 +65,7 @@ export function EditableHomeStickyAd() {
               href={AD_URL}
               target="_blank"
               rel="sponsored noopener noreferrer"
-              className="block bg-white"
+              className="block"
               aria-label="Explore Vefogix link building marketplace"
             >
               <Image

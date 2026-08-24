@@ -12,21 +12,24 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function LoginPage() {
   return (
     <EditableSiteShell>
-      <main className="bg-white text-[var(--slot4-page-text)]">
+      <main className="min-h-screen bg-[#0a0a0a] text-[#e8e6e3]">
         <section className="mx-auto grid min-h-[calc(100vh-14rem)] max-w-[var(--editable-container)] items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_420px] lg:px-0">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-[var(--slot4-accent)]">{pagesContent.auth.login.badge}</p>
-            <h1 className="mt-5 max-w-2xl text-5xl font-black leading-tight sm:text-6xl">{pagesContent.auth.login.title}</h1>
-            <p className="mt-6 max-w-lg text-base leading-8 text-slate-700">{pagesContent.auth.login.description}</p>
-            <div className="mt-8 grid gap-3 text-sm leading-7 text-slate-700 sm:grid-cols-2">
-              <p className="border-l-[3px] border-[var(--slot4-accent)] bg-[#f4f4f4] p-4">Continue article drafts, review saved submissions, and keep your publishing flow in one place.</p>
-              <p className="border-l-[3px] border-[var(--slot4-accent)] bg-[#f4f4f4] p-4">Your login state updates the navbar instantly with your name and logout action.</p>
+            <div className="flex items-center gap-3">
+              <div className="h-1.5 w-1.5 rounded-full bg-[#e84c30]" />
+              <span className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-[#e84c30]">{pagesContent.auth.login.badge}</span>
+            </div>
+            <h1 className="mt-5 max-w-2xl font-mono text-4xl font-bold uppercase tracking-[0.02em] sm:text-5xl lg:text-6xl">{pagesContent.auth.login.title}</h1>
+            <p className="mt-6 max-w-lg text-base leading-8 text-white/45">{pagesContent.auth.login.description}</p>
+            <div className="mt-8 grid gap-3 text-sm leading-7 text-white/40 sm:grid-cols-2">
+              <p className="border-l-2 border-[#e84c30] bg-[#111] p-4">Continue article drafts, review saved submissions, and keep your publishing flow in one place.</p>
+              <p className="border-l-2 border-[#e84c30] bg-[#111] p-4">Your login state updates the navbar instantly with your name and logout action.</p>
             </div>
           </div>
-          <div className="border border-[var(--editable-border)] bg-[#f7f7f7] p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-black tracking-[-0.04em]">{pagesContent.auth.login.formTitle}</h2>
+          <div className="border border-white/[0.06] bg-[#111] p-6 sm:p-8">
+            <h2 className="font-mono text-2xl font-bold uppercase tracking-[0.02em]">{pagesContent.auth.login.formTitle}</h2>
             <EditableLocalLoginForm />
-            <p className="mt-5 text-sm text-slate-700">New here? <Link href="/signup" className="font-black text-[var(--slot4-accent)] underline-offset-4 hover:underline">{pagesContent.auth.login.createCta}</Link></p>
+            <p className="mt-5 text-sm text-white/40">New here? <Link href="/signup" className="font-bold text-[#e84c30] underline-offset-4 hover:underline">{pagesContent.auth.login.createCta}</Link></p>
           </div>
         </section>
       </main>
