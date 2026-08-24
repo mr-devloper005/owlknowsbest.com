@@ -37,26 +37,29 @@ export default function ContactPage() {
             ]
 
   return (
-    <EditableSiteShell className="bg-white text-[var(--slot4-page-text)]">
-      <main className="mx-auto max-w-[var(--editable-container)] px-4 py-12 sm:px-6 lg:px-0">
-        <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <EditableSiteShell>
+      <main className="min-h-screen bg-[#0a0a0a] text-[#e8e6e3]">
+        <section className="mx-auto grid max-w-[var(--editable-container)] gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-0">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[var(--slot4-accent)]">{pagesContent.contact.eyebrow}</p>
-            <h1 className="mt-4 text-5xl font-black leading-tight sm:text-6xl">{pagesContent.contact.title}</h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-700">{pagesContent.contact.description}</p>
+            <div className="flex items-center gap-3">
+              <div className="h-1.5 w-1.5 rounded-full bg-[#e84c30]" />
+              <span className="font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-[#e84c30]">{pagesContent.contact.eyebrow}</span>
+            </div>
+            <h1 className="mt-5 font-mono text-4xl font-bold uppercase tracking-[0.02em] sm:text-5xl lg:text-6xl">{pagesContent.contact.title}</h1>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/45">{pagesContent.contact.description}</p>
             <div className="mt-8 grid gap-4">
               {lanes.map((lane) => (
-                <div key={lane.title} className="border-l-[3px] border-[var(--slot4-accent)] bg-[#f4f4f4] p-5">
-                  <lane.icon className="h-5 w-5 text-[var(--slot4-accent)]" />
-                  <h2 className="mt-3 text-xl font-semibold">{lane.title}</h2>
-                  <p className="mt-2 text-sm leading-7 text-slate-700">{lane.body}</p>
+                <div key={lane.title} className="border-l-2 border-[#e84c30] bg-[#111] p-5">
+                  <lane.icon className="h-5 w-5 text-[#e84c30]" />
+                  <h2 className="mt-3 font-mono text-lg font-bold uppercase tracking-[0.02em]">{lane.title}</h2>
+                  <p className="mt-2 text-sm leading-7 text-white/40">{lane.body}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="border border-[var(--editable-border)] bg-[#f7f7f7] p-6">
-            <h2 className="text-2xl font-semibold">{pagesContent.contact.formTitle}</h2>
+          <div className="border border-white/[0.06] bg-[#111] p-6">
+            <h2 className="font-mono text-2xl font-bold uppercase tracking-[0.02em]">{pagesContent.contact.formTitle}</h2>
             <EditableContactLeadForm />
           </div>
         </section>

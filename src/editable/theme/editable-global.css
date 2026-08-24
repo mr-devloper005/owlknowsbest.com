@@ -1,14 +1,5 @@
 /*
-  Editable global theme layer.
-
-  Safe for UI editors / AI tools:
-  - Full site background
-  - Global text color
-  - Selection color
-  - Scrollbar feel
-  - Article body typography accents
-
-  Do not add data fetching, scripts, or route logic here.
+  Editable global theme layer — dark military-tech aesthetic.
 */
 
 body {
@@ -18,21 +9,21 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--slot4-accent-fill) 22%, transparent);
-  color: var(--slot4-page-text);
+  background: color-mix(in oklab, var(--slot4-accent-fill) 30%, transparent);
+  color: #fff;
 }
 
 ::-webkit-scrollbar-track {
-  background: color-mix(in oklab, var(--slot4-page-bg) 88%, white);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in oklab, var(--slot4-accent) 40%, transparent);
+  background: rgba(232,76,48,0.25);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in oklab, var(--slot4-accent) 62%, transparent);
+  background: rgba(232,76,48,0.45);
 }
 
 .article-content h2 {
@@ -44,13 +35,11 @@ body {
 }
 
 /*
-  Legacy auth routes still render the shared app shell directly.
-  These route-level overrides keep /login and /signup visually aligned with
-  the editable article masthead without editing app route/component files.
+  Legacy auth route overrides — dark theme aligned.
 */
 body > div[class*="#fff7ee"],
 body > div[class*="#2f1d16"] {
-  background: #fff !important;
+  background: #0a0a0a !important;
   color: var(--slot4-page-text) !important;
 }
 
@@ -62,8 +51,8 @@ body > div[class*="#2f1d16"] > header[class*="#fff7ee"] {
   top: 0 !important;
   z-index: 50 !important;
   width: 100% !important;
-  border-bottom: 1px solid var(--editable-border) !important;
-  background: #fff !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  background: #0a0a0a !important;
   color: var(--slot4-page-text) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -71,27 +60,33 @@ body > div[class*="#2f1d16"] > header[class*="#fff7ee"] {
 
 body > div[class*="#fff7ee"] > header[class*="#fff7ee"]::before,
 body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::before {
-  content: "LATEST   Fresh article ideas, editorial notes, and reader-first publishing.";
+  content: "DISPATCH   Curated reads, deep analysis, and expert perspectives.";
   order: 1;
   display: block;
   height: 36px;
-  background: #30363d;
+  background: #e84c30;
   color: #fff;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   line-height: 36px;
   text-align: center;
 }
 
 body > div[class*="#fff7ee"] > header[class*="#fff7ee"]::after,
 body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::after {
-  content: var(--slot4-brand-name) "\A News and Article Magazine";
+  content: var(--slot4-brand-name) "\A Knowledge Command Center";
   order: 2;
   display: block;
   padding: 24px 16px 18px;
-  color: #f3242f;
-  font-size: clamp(48px, 6vw, 72px);
-  font-weight: 900;
+  color: #e84c30;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   line-height: 0.95;
   text-align: center;
   white-space: pre;
@@ -100,19 +95,22 @@ body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::after {
 body > div[class*="#fff7ee"] > header[class*="#fff7ee"] > nav,
 body > div[class*="#2f1d16"] > header[class*="#fff7ee"] > nav {
   order: 3;
-  height: 50px !important;
+  height: 48px !important;
   max-width: var(--editable-container) !important;
   padding-inline: 0 !important;
-  border-top: 1px solid var(--editable-border);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 body > div[class*="#fff7ee"] > header[class*="#fff7ee"] > nav::before,
 body > div[class*="#2f1d16"] > header[class*="#fff7ee"] > nav::before {
-  content: "Home   Article   About   Contact";
+  content: "Home   Articles   About   Contact";
   flex: 1 1 auto;
   color: var(--slot4-page-text);
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
   word-spacing: 24px;
 }
 
@@ -126,15 +124,23 @@ body > div[class*="#2f1d16"] > header[class*="#fff7ee"] form {
 body > div[class*="#fff7ee"] > header[class*="#fff7ee"] a[href="/login"],
 body > div[class*="#2f1d16"] > header[class*="#fff7ee"] a[href="/login"] {
   color: var(--slot4-page-text) !important;
-  border-radius: 2px !important;
-  font-weight: 900 !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+  font-family: monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 11px !important;
 }
 
 body > div[class*="#fff7ee"] > header[class*="#fff7ee"] a[href="/signup"],
 body > div[class*="#2f1d16"] > header[class*="#fff7ee"] a[href="/signup"] {
-  border-radius: 2px !important;
-  background: #f3242f !important;
+  border-radius: 0 !important;
+  background: #e84c30 !important;
   color: #fff !important;
+  font-family: monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 11px !important;
 }
 
 body > div[class*="#fff7ee"] > main,
@@ -159,21 +165,23 @@ body > div[class*="#fff7ee"] > main h1,
 body > div[class*="#2f1d16"] > main h1,
 body > div[class*="#2f1d16"] > main h2 {
   color: var(--slot4-page-text) !important;
-  font-weight: 900 !important;
+  font-weight: 700 !important;
+  font-family: monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
   line-height: 1.08 !important;
-  letter-spacing: 0 !important;
 }
 
 body > div[class*="#fff7ee"] > main p,
 body > div[class*="#2f1d16"] > main p {
-  color: #5e6670 !important;
+  color: #8a8580 !important;
 }
 
 body > div[class*="#fff7ee"] > main > section:last-child,
 body > div[class*="#2f1d16"] > main > section:first-child {
-  border: 1px solid var(--editable-border) !important;
-  border-radius: 2px !important;
-  background: #f7f7f7 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 0 !important;
+  background: #141414 !important;
   color: var(--slot4-page-text) !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
@@ -181,28 +189,31 @@ body > div[class*="#2f1d16"] > main > section:first-child {
 
 body > div[class*="#fff7ee"] > main input,
 body > div[class*="#2f1d16"] > main input {
-  border-radius: 2px !important;
-  border-color: var(--editable-border) !important;
-  background: #fff !important;
-  color: #0f172a !important;
+  border-radius: 0 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  background: #1a1a1a !important;
+  color: #e8e6e3 !important;
 }
 
 body > div[class*="#fff7ee"] > main button[type="submit"],
 body > div[class*="#2f1d16"] > main button[type="submit"] {
-  border-radius: 2px !important;
+  border-radius: 0 !important;
   background: var(--slot4-accent) !important;
   color: #fff !important;
+  font-family: monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
 }
 
 @media (max-width: 767px) {
   body > div[class*="#fff7ee"] > header[class*="#fff7ee"]::after,
   body > div[class*="#2f1d16"] > header[class*="#fff7ee"]::after {
-    font-size: 42px;
+    font-size: 32px;
   }
 
   body > div[class*="#fff7ee"] > header[class*="#fff7ee"] > nav::before,
   body > div[class*="#2f1d16"] > header[class*="#fff7ee"] > nav::before {
-    content: "Home   Article";
+    content: "Home   Articles";
     word-spacing: 16px;
   }
 }
